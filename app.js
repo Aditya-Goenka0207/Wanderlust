@@ -95,10 +95,10 @@ app.use((req, res, next) => {
   next();
 });
 
-//Root route
-// app.get("/" , (req,res)=>{
-//     res.send("I am root");
-// })
+// Root route
+app.get("/" , (req,res)=>{
+    res.redirect('/signup');
+})
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
