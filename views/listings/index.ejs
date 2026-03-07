@@ -36,6 +36,34 @@
     display: flex;
     align-items: center;
   }
+
+  /* ---------- Mobile Horizontal Scroll ---------- */
+
+  @media (max-width: 768px){
+
+    #filters{
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 0.5rem;
+    }
+
+    #filters::-webkit-scrollbar{
+      display: none;
+    }
+
+    .filter{
+      flex: 0 0 auto;
+      margin-right: 1.5rem;
+    }
+
+    .tax-toggle{
+      flex: 0 0 auto;
+      margin-left: 1rem;
+    }
+
+  }
+
 </style>
 
 <div id="filters">
@@ -155,18 +183,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let taxInfo = document.getElementsByClassName("tax-info");
 
     for (let info of taxInfo) {
-
       if (info.style.display != "inline") {
         info.style.display = "inline";
       } 
       else {
         info.style.display = "none";
       }
-
     }
-
   });
-
 });
 
 </script>
